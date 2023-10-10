@@ -18,7 +18,7 @@ const EditBooks = () => {
   useEffect(() => {
     setLoading(true)
     axios
-      .get(`http://localhost:5000/books/${id}`)
+      .get(`https://book-store-cihatbulut.vercel.app/${id}`)
       .then((res) => {
         const { title, author, publishYear } = res.data
         setTitle(title)
@@ -41,7 +41,7 @@ const EditBooks = () => {
     }
     setLoading(true)
     axios
-      .put(`http://localhost:5000/books/${id}`, data)
+      .put(`https://book-store-cihatbulut.vercel.app/${id}`, data)
       .then(() =>{
         setLoading(false)
         enqueueSnackbar('Book updated successfully.', { variant: 'success' })
